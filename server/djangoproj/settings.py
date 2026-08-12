@@ -28,8 +28,8 @@ SECRET_KEY =\
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'https://appleppleple-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/']
-CSRF_TRUSTED_ORIGINS = ['https://appleppleple-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
+ALLOWED_HOSTS = ['localhost', 'https://sturdy-spoon-j7vv5gjpjwv256jw-8000.app.github.dev/']
+CSRF_TRUSTED_ORIGINS = ['https://sturdy-spoon-j7vv5gjpjwv256jw-8000.app.github.dev/']
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
@@ -137,7 +137,7 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS = [ os.path.join(BASE_DIR,'frontend/static'), 
+STATICFILES_DIRS = [ os.path.join(BASE_DIR,'frontend/static'),
                      os.path.join(BASE_DIR, 'frontend/build'),
                      os.path.join(BASE_DIR, 'frontend/build/static'),
                      ]
