@@ -25,7 +25,7 @@ try {
   Dealerships.deleteMany({}).then(()=>{
     Dealerships.insertMany(dealerships_data['dealerships']);
   });
-  
+
 } catch (error) {
   res.status(500).json({ error: 'Error fetching documents' });
 }
@@ -56,19 +56,34 @@ app.get('/fetchReviews/dealer/:id', async (req, res) => {
   }
 });
 
-// Express route to fetch all dealerships
+// Express endpoint to fetch all dealers
 app.get('/fetchDealers', async (req, res) => {
-//Write your code here
+  try {
+    const documents = await Dealerships.find();
+    res.json(documents);
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching documents' });
+  }
 });
 
-// Express route to fetch Dealers by a particular state
+// Express endpoint to fetch dealers by a particular state
 app.get('/fetchDealers/:state', async (req, res) => {
-//Write your code here
+  try {
+    const documents = await Dealerships.find({ state: req.params.state });
+    res.json(documents);
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching documents' });
+  }
 });
 
-// Express route to fetch dealer by a particular id
+// Express endpoint to fetch dealer by a particular id
 app.get('/fetchDealer/:id', async (req, res) => {
-//Write your code here
+  try {
+    const document = await Dealerships.findOne({ id: req.params.id });
+    res.json(document);
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching document' });
+  }
 });
 
 //Express route to insert review
