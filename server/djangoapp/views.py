@@ -82,9 +82,16 @@ def registration(request):
 
 # # Update the `get_dealerships` view to render the index page with
 # a list of dealerships
-def get_dealerships(request,state="All"):
-    pass# ...
-
+def get_dealerships(request, state="All"):
+    try:
+        if state == "All":
+            dealerships = get_activedealers()
+        else:
+            dealerships = get_activedealers(state=state)
+        return JsonResponse({"status": 200, "dealers": dealerships})
+    except Exception as e:
+        # 에러 발생 시에도 반드시 HttpResponse 또는 JsonResponse 반환
+        return JsonResponse({"status": 500, "message": str(e)})
 # Create a `get_dealer_reviews` view to render the reviews of a dealer
 # def get_dealer_reviews(request,dealer_id):
 # ...
