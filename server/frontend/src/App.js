@@ -1,4 +1,5 @@
 import Dealers from './components/Dealers/Dealers';
+import Dealer from "./components/Dealers/Dealer"
 
 import LoginPanel from "./components/Login/Login"
 import { Routes, Route } from "react-router-dom";
