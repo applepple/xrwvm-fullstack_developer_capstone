@@ -117,7 +117,7 @@ def get_dealerships(request, state="All"):
     else:
         endpoint = "/fetchDealers/"+state
     dealerships = get_request(endpoint)
-    return JsonResponse({"status":200,"dealers":endpoint})
+    return JsonResponse({"status":200,"dealers":dealerships})
 
 def get_dealer_details(request, dealer_id):
     if(dealer_id):
