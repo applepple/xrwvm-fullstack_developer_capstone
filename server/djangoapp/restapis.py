@@ -45,7 +45,7 @@ def analyze_review_sentiments(text):
 
 
 # def post_review(data_dict):
-def post_review(data_dict):
+def post_review(data_dict):g
     request_url = backend_url+"/insert_review"
     try:
         response = requests.post(request_url,json=data_dict)
